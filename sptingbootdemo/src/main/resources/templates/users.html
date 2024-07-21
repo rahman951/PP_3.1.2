@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> <meta charset="UTF-8">
+<head>
+    <title>All users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .user-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .user-details span {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>All users</h1>
+    <ul>
+        <!-- Iterate over each user in the user_list -->
+        <li th:each="user : ${user_list}">
+            <!-- Display user details -->
+            <div class="user-details">
+                <span>ID: <span th:text="${user.getId()}"></span></span>
+                <span>First Name: <span th:text="${user.getFirstName()}"></span></span>
+                <span>Last Name: <span th:text="${user.getLastName()}"></span></span>
+                <span>Age: <span th:text="${user.getAge()}"></span></span>
+                <!-- Link to edit user -->
+                <a th:href="@{/id/edit(id=${user.getId()})}">Edit</a>
+            </div>
+        </li>
+    </ul>
+    <!-- Link to create a new user -->
+    <div style="text-align: center;">
+        <a href="/new" style="background-color: #007bff; color: #fff; padding: 10px 20px; border-radius: 5px;">Create new User</a>
+    </div>
+</div>
+</body>
+</html>
