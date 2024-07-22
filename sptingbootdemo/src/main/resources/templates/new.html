@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"> <meta charset="UTF-8">    <meta charset="UTF-8">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<meta charset="UTF-8">
 <head>
     <title>New User!</title>
     <style>
@@ -46,18 +48,18 @@
     </style>
 </head>
 <body>
-<form th:method="POST" th:action="@{/}" th:object="${user}">
+<form th:action="@{/}" th:method="POST" th:object="${user}">
     <label for="First_Name">First Name: </label>
-    <input type="text" th:field="*{firstName}" id="First_Name"/>
-    <div style="color:#b81a1a" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Name Error</div>
+    <input id="First_Name" th:field="*{firstName}" type="text"/>
+    <div style="color:#b81a1a" th:errors="*{firstName}" th:if="${#fields.hasErrors('firstName')}">Name Error</div>
     <br/>
     <label for="Last_Name">Last Name: </label>
-    <input type="text" th:field="*{lastName}" id="Last_Name"/>
-    <div style="color:red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">LastName Error</div>
+    <input id="Last_Name" th:field="*{lastName}" type="text"/>
+    <div style="color:red" th:errors="*{lastName}" th:if="${#fields.hasErrors('lastName')}">LastName Error</div>
     <br/>
     <label for="Age">Age: </label>
-    <input type="text" th:field="*{age}" id="Age"/>
-    <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</div>
+    <input id="Age" th:field="*{age}" type="text"/>
+    <div style="color:red" th:errors="*{age}" th:if="${#fields.hasErrors('age')}">Age Error</div>
     <br/>
     <input type="submit" value="Create User"/>
 

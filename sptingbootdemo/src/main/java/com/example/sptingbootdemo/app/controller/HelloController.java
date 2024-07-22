@@ -1,12 +1,12 @@
 package com.example.sptingbootdemo.app.controller;
 
 import com.example.sptingbootdemo.app.model.User;
+import com.example.sptingbootdemo.app.sevice.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import com.example.sptingbootdemo.app.sevice.UserService;
 
 @Controller
 @RequestMapping("/")

@@ -5,7 +5,6 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
 
-
 import java.util.Objects;
 
 @Entity
@@ -71,6 +70,7 @@ public class User {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;

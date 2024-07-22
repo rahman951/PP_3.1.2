@@ -1,7 +1,7 @@
 package com.example.sptingbootdemo.app.sevice;
 
-import com.example.sptingbootdemo.app.model.User;
 import com.example.sptingbootdemo.app.dao.UserDao;
+import com.example.sptingbootdemo.app.model.User;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,13 +19,12 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	@Transactional
+	
 	public List<User> index() {
 		return userDao.index();
 	}
 	
 	@Override
-	@Transactional
 	public User show(long id) {
 		return userDao.show(id);
 	}
